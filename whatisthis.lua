@@ -4,8 +4,6 @@ local h = {}
 
 local x, y
 
-setthreadidentity(2)
-
 for i, v in getgc(true) do
     if typeof(v) == "table" then
         local a = rawget(v, "Detected")
@@ -50,5 +48,3 @@ local o; o = hookfunction(getrenv().debug.info, newcclosure(function(...)
     
     return o(...)
 end))
-
-setthreadidentity(8)
